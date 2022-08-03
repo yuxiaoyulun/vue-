@@ -1,0 +1,55 @@
+<!--
+ * @Descripttion: 
+ * @version: 
+ * @Author: @yulun
+ * @Date: 2022-08-01 14:11:31
+ * @LastEditors: @yulun
+ * @LastEditTime: 2022-08-01 16:31:59
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>myVue双向绑定</title>
+  <style>
+    #app{
+      width: 800px;
+      margin: 100px auto;
+    }
+    #app input{
+      width: 200px;
+      height: 24px;
+      border-radius: 3px;
+      border: 1px solid;
+      outline: none;
+    }
+    #app input:focus{
+      border: 1px solid blue;
+    }
+    .content{
+      font-size: 20px;
+      color: blue;
+    }
+  </style>
+</head>
+<body>
+  <div id="app">
+    <input type="text" v-model="name" placeholder="请输入">
+    <p class="content">{{name}}</p>
+  </div>
+  <script src="./js/observer.js"></script>
+  <script src="./js/watcher.js"></script>
+  <script src="./js/compile.js"></script>
+  <script src="./js/index.js"></script>
+  <script>
+    const vm = new MyVue({
+      el:"#app",
+      data:{
+        name:'博客'
+      }
+    },"name")
+  </script>
+</body>
+</html>
